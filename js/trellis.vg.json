@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Natural Disasters by Type",
+    "fontSize": 20,
+    "font": "Arial, Helvetica, sans-serif",
+    "fontWeight": "bold"
+  },
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "resources/natural_disasters_by_type.csv"
+  },
+  "mark": {
+    "type": "area"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": "Year",
+      "axis": {
+        "grid": false,
+        "tickCount": 10
+      }
+    },
+    "y": {
+      "field": "Number of reported natural disasters (reported disasters)",
+      "type": "quantitative",
+      "title": "Number of"
+    },
+    "tooltip": [
+      {
+        "field": "Year",
+        "timeUnit": "year",
+        "type": "temporal",
+        "title": "Year"
+      },
+      {
+        "field": "Number of reported natural disasters (reported disasters)",
+        "type": "quantitative",
+        "title": "Number of disasters"
+      }
+    ],
+    "color": {
+      "field": "Entity",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "scheme": "dark2"
+      }
+    },
+    "row": {
+      "field": "Entity",
+      "type": "nominal",
+      "title": "Natural Disaster Type"
+    }
+  }
+}

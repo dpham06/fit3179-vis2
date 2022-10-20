@@ -1,0 +1,132 @@
+{
+    "data": {
+        "url": "resources/global_land_temperatures_by_country.csv"
+    },
+    "width": "container",
+    "height": "container",
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "title": "Year",
+            "axis": {
+                "tickCount": 10
+            }
+        }
+    },
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "field": "Average Temperature",
+                    "type": "quantitative",
+                    "axis": {
+                        "tickCount": 10,
+                        "title": "Average Temperature (°C)"
+                    }
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+					"scale": {
+						"scheme": "tableau10"
+					}
+                }
+            },
+            "layer": [
+                {
+                    "mark": "line"
+                },
+                {
+                    "transform": [
+                        {
+                            "filter": {
+                                "param": "hover",
+                                "empty": false
+                            }
+                        }
+                    ],
+                    "mark": "point"
+                }
+            ]
+        },
+        {
+            "transform": [
+                {
+                    "pivot": "Country",
+                    "value": "Average Temperature",
+                    "groupby": [
+                        "Date"
+                    ]
+                }
+            ],
+            "mark": "rule",
+            "encoding": {
+                "opacity": {
+                    "condition": {
+                        "value": 0.3,
+                        "param": "hover",
+                        "empty": false
+                    },
+                    "value": 0
+                },
+                "tooltip": [
+                    {
+                        "field": "Brazil",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Canada",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "China",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "France",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Germany",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "India",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Italy",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Japan",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "United Kingdom",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "United States",
+                        "type": "quantitative"
+                    }
+                ]
+            },
+            "params": [
+                {
+                    "name": "hover",
+                    "select": {
+                        "type": "point",
+                        "fields": [
+                            "Date"
+                        ],
+                        "nearest": true,
+                        "on": "mouseover",
+                        "clear": "mouseout"
+                    }
+                }
+            ]
+        }
+    ]
+}

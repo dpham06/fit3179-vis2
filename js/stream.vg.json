@@ -1,0 +1,130 @@
+{
+	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+	"width": "container",
+	"height": "container",
+	"data": {
+		"url": "resources/co2_emissions_by_country.csv"
+	},
+	"encoding": {
+		"x": {
+			"field": "Year",
+			"type": "temporal",
+			"axis": {
+				"tickCount": 10
+			}
+		}
+	},
+	"layer": [
+		{
+			"encoding": {
+				"y": {
+					"aggregate": "sum",
+					"field": "Annual CO2 emissions (tonnes)",
+					"type": "quantitative",
+					"axis": null,
+					"stack": "center"
+				},
+				"color": {
+					"field": "Country",
+					"type": "nominal",
+					"scale": {
+						"scheme": "tableau10"
+					}
+				}
+			},
+			"layer": [
+				{
+					"mark": "area"
+				}
+			]
+		},
+		{
+			"transform": [
+				{
+					"pivot": "Country",
+					"value": "Annual CO2 emissions (tonnes)",
+					"groupby": [
+						"Year"
+					]
+				}
+			],
+			"mark": "rule",
+			"encoding": {
+				"opacity": {
+					"condition": {
+						"value": 0.3,
+						"param": "hover",
+						"empty": false
+					},
+					"value": 0
+				},
+				"tooltip": [
+					{
+						"field": "Brazil",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "Canada",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "China",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "France",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "Germany",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "India",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "Italy",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "Japan",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "United Kingdom",
+						"type": "quantitative",
+						"format": ","
+					},
+					{
+						"field": "United States",
+						"type": "quantitative",
+						"format": ","
+					}
+				]
+			},
+			"params": [
+				{
+					"name": "hover",
+					"select": {
+						"type": "point",
+						"fields": [
+							"Year"
+						],
+						"nearest": true,
+						"on": "mouseover",
+						"clear": "mouseout"
+					}
+				}
+			]
+		}
+	]
+}

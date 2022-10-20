@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <!-- Vegalite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Stylesheet and JS script -->
+    <link rel="stylesheet" href="style/stylesheet.css">
+    <script src="js/vega.js"></script>
+
+    <title>Visualization 2</title>
+</head>
+
+<body>
+    <div class="body-container">
+        <div id="header-section">
+            <h1>Our World Climate</h1>
+            <sub>A visualization by Dominic Pham</sub>
+        </div>
+        <div class="horizontal-container">
+            <div class="text-container">
+                <p>Welcome to this short visualization talking about our world's climate. Our planet Earth is 4.5
+                    billions years old which is a long time especially when you compare it to how long humans have been
+                    around, roughly 300,000 years. It is no secret that climate change is taking place at an</p>
+            </div>
+            <div class="text-container">
+                <p>accelerated rate, which is largely attributed to industrialization. In the upcoming charts, we will
+                    explore the signs in our environmental data which point toward a shift in climate. Additionally, we
+                    will explore some of the consequences that accelerated climate is causing.
+                </p>
+            </div>
+        </div>
+
+        <div class="plot-container">
+            <div class="plot-title">
+                <h2>Average Temperature for Top 10 GDP Countries</h2>
+            </div>
+            <div id="line" class="vega-plot"></div>
+        </div>
+
+        <div class="horizontal-container">
+            <div class="text-container">
+                <p>From the chart above, it looks as if the average temperature for the listed countries has not changed
+                    for the past 100 years. You would be quite right to think that. In fact, the average global
+                    temperature has only moved by slightly more than 1 degree celsius in the last 100 years. This slight
+                    change in average temperature would be difficult to deduce from a chart.
+                    <br><br>
+                    1 degree celsius may not sound like anything to be alarmed about, throughout the course of a single
+                    day the temperature fluctuates more than that. Furthermore, 1 degree seems like even less of a worry
+                    when you find out Earth's climate naturally experiences periods of warming and cooling. To the first
+                    point, the ecosystems and life on Earth have evolved and adapted to the warming and cooling of a day
+                    and night cycle. The
+                    second point holds a bit more merit and has been used in the past by climate deniers as a
+                    counterargument to climate change. However, these periods happen over many years, allowing for slow,
+                    gradual adoption and evolution.
+                </p>
+            </div>
+            <div class="text-container">
+                <div class="image-container">
+                    <img src="img/paris_agreement.jpg" alt="Figure 1: World leaders at the Paris Agreement, 2016.">
+                    <caption>
+                        <p>Figure 1: World leaders at the Paris Agreement, 2016.</p>
+                    </caption>
+                </div>
+                <p>
+                    1 degree of warming in such a short period is enough to warrant sounding the alarms, people and
+                    governments all over the world are calling for action. The Paris Agreement, signed by over 190
+                    countries in 2016, seeks to limit global warming to below 2 degrees.
+                </p>
+            </div>
+        </div>
+
+        <div class="plot-container">
+            <div class="plot-title">
+                <h2>CO2 Emissions (Tonnes) for Top 10 GDP Countries</h2>
+            </div>
+            <div id="stream" class="vega-plot"></div>
+        </div>
+
+        <div class="horizontal-container">
+            <div class="text-container">
+                <div class="image-container">
+                    <img src="img/coal_power_station.jpg" alt="Figure 2: A coal power station.">
+                    <caption>
+                        <p>Figure 2: A coal power station.</p>
+                    </caption>
+                </div>
+            </div>
+            <div class="text-container">
+                The main cause for climate change is greenhouse gases (GHG). Some GHGs include carbon dioxide
+                (CO<sub>2</sub>), methane and nitrous oxide. These gases are naturally present in our atmosphere,
+                however their levels are kept relatively stable. GHGs cause the greenhouse gas effect, which traps heat
+                and light that would otherwise escape our atmosphere. We depend on a certain amount of CO<sub>2</sub> to
+                keep our planet from freezing over. As seen from above, CO<sub>2</sub> is being produced and polluted at
+                an increasingly higher rate.
+                <br><br>
+                <p>CO<sub>2</sub> in particular is the GHG which humans have been polluting the most of, and is the main
+                    cause for the increase in global average temperatures. As it is the most polluted GHG, we have come
+                    focus its output over time for this chart. The streamgraph choice of idiom here illustrates the
+                    frightening increase in emissions since the early last century. The human species has increased
+                    their pollution of CO<sub>2</sub> many magnitudes in a very short period. In the last 20 years, we
+                    have roughly doubled how much we output</p>
+            </div>
+        </div>
+
+        <div class="plot-container">
+            <div class="plot-title">
+                <h2>World Death Rates Linked to Air Pollution (2017)</h2>
+            </div>
+            <div id="map" class="vega-plot"></div>
+        </div>
+
+        <div class="horizontal-container">
+            <div class="text-container">
+                <p>The first major consequence of our pollution of the environment is the affect it has on our air
+                    quality. As seen from above, air quality is causing deaths in countries all across the world.
+                    These deaths alone do not account for the impact reduced air quality is having on all of us as
+                    these are deaths directly linked to air quality. According to a report from the University of
+                    Chicago, air pollution is taking an average of 2.2 years off the average global life expectancy.
+                    <br><br>
+                    Our air quality suffers due to the burning of fossil fuels including
+                </p>
+            </div>
+            <div class="text-container">
+                <p> coal, oil and gas. We burn these fuels to produce energy to power our cities and transport. GHGs are
+                    one of the byproducts of these processes; however, other byproducts are also polluted into our
+                    atmosphere, further reducing air quality. <br><br> Alternative, 'green' sources of energy production
+                    which do not release any harmful byproducts are being adopted more and more. These sources
+                    include wind, solar, geothermal, hydro, nuclear and others.
+                </p>
+            </div>
+        </div>
+        <div class="plot-container" id="trellis-container">
+            <div class="plot-title">
+                <h2>Natural Disasters by Type</h2>
+            </div>
+            <div id="trellis" class="vega-plot"></div>
+        </div>
+        <div class="horizontal-container" id="last-container">
+            <div class="text-container">
+                <p>The second and final consequence of climate change we will explore is the number of natural
+                    disasters. In particular we are focusing on natural disasters whose rate of occurrence is affected
+                    by a change in climate, for example we are not including earthquakes. We can see across the board an
+                    increase in the number of natural disasters.
+                    <br><br>
+                    Natural disasters have multitudes of consequences which can be summed up by the number of human
+                    lives lost and economic damage sustained. As the climate worsens the rate at which these disasters
+
+                </p>
+            </div>
+            <div class="text-container">
+                <p> happen will continue to increase. Food shortages are an especially worrying
+                    consequence that can happen as a result of natural disasters which we have been witnessing in recent
+                    history. A number of food shortages at the same time could lead to mass starvation.
+                    <br><br>
+                    The future is not all bleak. The world has woken up to accept that we are the cause of such
+                    events. Initiatives all over the world are beginning to tackle our emissions targets.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="footer-section"></div>
+</body>
+
+</html>
